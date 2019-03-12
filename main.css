@@ -1,3 +1,23 @@
 body {
-    background-color: slateblue;
+    background-color: #788cdb;
+}
+
+#sweetPie {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.card {
+    width: 30%;
+    border: 1px solid red;
+    text-align: center;
+    border-radius: 10%;
+    color: white;
+    margin: 15px;
+}
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    border: 1px solid orangered;
 }
