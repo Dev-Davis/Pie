@@ -61,7 +61,7 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint;
 }
 
-const makeApie = () => {
+const makeAPie = () => {
 
     let pieChoice = '';
     pies.forEach((pie) => {
@@ -92,9 +92,18 @@ const makeApie = () => {
 //     printToDom('sweetPie', pieChoice);
 // }
 
+const buttonClick = () => {
+  console.log('You clicked a button');
+};
+
+const buttonEvents = () => {
+  document.getElementById('Zoe').addEventListener('click', buttonClick);
+}
+
 
 
 init = () => {
-    makeApie();
+  buttonEvents();
+  makeAPie();
 };
 init();
