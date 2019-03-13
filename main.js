@@ -61,10 +61,10 @@ const printToDom = (divId, textToPrint) => {
     selectedDiv.innerHTML = textToPrint;
 }
 
-const makeAPie = () => {
+const pieBuilder = (monkeybutts) => {
 
     let pieChoice = '';
-    pies.forEach((pie) => {
+    monkeybutts.forEach((pie) => {
         pieChoice += `<div class="card">`
         pieChoice +=    `<h2>${pie.name}</h2>`
         // pieChoice +=    `<h2>${pie.ingredients}</h2>`
@@ -78,32 +78,37 @@ const makeAPie = () => {
     printToDom('sweetPie', pieChoice);
 }
 
-//     for (let i = 0; i < pie.length; i++) {
-//         pieChoice += `<div class="piez">`;
-//         pieChoice += `<h1>${pie[i].name}</h1>`;
-//         // pieChoice += `<p>${pie[i].ingredients}</p>`;
-//         // pieChoice += `<p>${pie[i].bakeTemp}</p>`;
-//         // pieChoice += `<p>${pie[i].drinkPairing}</p>`;
-        //    pieChoice += `<p><img src="${pie[i].imageUrl}"></p>`;
-//         // pieChoice += `<p>${pie[i].instructor}</p>`;
-//         // pieChoice += `<p>${pie[i].iceCream}</p>`;
-//         pieChoice += `</div>`
-//     }
-//     printToDom('sweetPie', pieChoice);
-// }
+const buttonClick = (e) => {
+  const buttonId = e.target.id;
+  // console.log('You clicked a button', e.target.id);
+  //loop over pies array
+  //if the value of the instructor key is the same as the button id - keep that object
+  //once we have all the pies for that instructor - call pieBuilder
 
-const buttonClick = () => {
-  console.log('You clicked a button');
+  const selectedPies = [];
+  pies.forEach((pie) => {
+    if(pie.instructor === buttonId) {
+      selectedPies.push(pie);
+    }
+
+    if (buttonId === 'All') {
+      pieBuilder(pies);
+    } else {
+      pieBuilder(selectedPies);
+    }
+  });
 };
-
 const buttonEvents = () => {
   document.getElementById('Zoe').addEventListener('click', buttonClick);
+  document.getElementById('Saul').addEventListener('click', buttonClick);
+  document.getElementById('Michael').addEventListener('click', buttonClick);
+  document.getElementById('All').addEventListener('click', buttonClick);
 }
 
 
 
 init = () => {
   buttonEvents();
-  makeAPie();
+  pieBuilder(pies);
 };
 init();
