@@ -2,12 +2,14 @@
 
 Makes an array of pies.  
 
-## Getting started  
+## Getting started 
+Installation process
+Mac OS X - Open terminal and cd into the folder you want your project to be in then run the following prompt in your terminal 
 ```  
 $git clone https://github.com/nss-evening-cohort-9/ pie/  
 ```  
 
-### Prerequisites  
+### Prerequisites 
 ```
 $npm install -g https-server  
 ```  
@@ -16,5 +18,5 @@ $npm install -g https-server
 ![images of pies](https://raw.githubusercontent.com/Dev-Davis/Pie/master/screenshots/pies.png)
 
 ## Running   
-Browse to pie directory and run http server
-'localhost' 5000
+Browse to pie directory and run http server on your
+'localhost'
